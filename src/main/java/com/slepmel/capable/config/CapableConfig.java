@@ -16,19 +16,29 @@ public class CapableConfig {
 	}
 	
 	public static class Common {
-		
+		public static ConfigValue<Integer> zeedriumSwordDamage;
+		public static ConfigValue<Integer> zeedriumAxeDamage;
+		public static ConfigValue<Integer> zeedriumPickaxeDamage;
+		public static ConfigValue<Integer> zeedriumHoeDamage;
+		public static ConfigValue<Integer> zeedriumShovelDamage;
 		public static ConfigValue<Boolean> enableOreGen;
 		public static ConfigValue<Boolean> enableToolTips;
 		
 		 Common(ForgeConfigSpec.Builder builder) {
 			 
+			 
 			 builder.push("ToolTips");
 			 enableToolTips = builder.define("Enable custom tooltips for items and blocks", true);
-			 
+			 builder.pop();
 			 builder.push("World Gen");
-	            enableOreGen = builder.define("Enable ore generation", true);
-	            
-	            builder.push("Specific Ore Spawning");
+	          enableOreGen = builder.define("Enable ore generation", true);
+	         builder.pop();
+	         builder.push("Specific Ore Spawning");
+	         
+	         builder.pop();
+	         builder.push("Attack Damage");
+	         builder.push("Zeedrium");
+	         zeedriumSwordDamage = builder.define("Zeedrium Sword Damage", 20);
 		 }
 	}
 

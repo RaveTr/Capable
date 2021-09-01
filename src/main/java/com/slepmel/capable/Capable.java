@@ -30,6 +30,7 @@ import com.slepmel.capable.data.CapableAdvancementProvider;
 import com.slepmel.capable.data.CapableBlockModelProvider;
 import com.slepmel.capable.data.CapableBlockStateProvider;
 import com.slepmel.capable.data.CapableItemModelProvider;
+import com.slepmel.capable.data.CapableRecipeProvider;
 import com.slepmel.capable.data.CapableTagProvider;
 import com.slepmel.capable.setupandevents.CommonSetup;
 
@@ -86,6 +87,7 @@ public class Capable
 			dataGen.addProvider(new CapableBlockModelProvider(dataGen, MODID, exists));
 			dataGen.addProvider(new CapableItemModelProvider(dataGen, exists));
 			dataGen.addProvider(new CapableBlockStateProvider(dataGen, MODID, exists));
+			dataGen.addProvider(new CapableRecipeProvider(dataGen));
 		}
     }
     
