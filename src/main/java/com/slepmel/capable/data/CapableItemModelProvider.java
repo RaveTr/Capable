@@ -63,11 +63,6 @@ public class CapableItemModelProvider extends ItemModelProvider{
         for (RegistryObject<Item> item : itemBlocks) {
             String name = item.getId().getPath();
 
-            /*
-             *  Skip elements that have no block model inside of assets/chaosawakens/models/block
-             *  or already have an existing item model at assets/chaosawakens/models/item
-             */
-
             if (!existingFileHelper.exists(new ResourceLocation(Capable.MODID, "block/" + name), MODEL) || existingFileHelper.exists(new ResourceLocation(Capable.MODID, "item/" + name), MODEL))
                 continue;
 
