@@ -46,10 +46,6 @@ public class CapableItemModelProvider extends ItemModelProvider{
             if (name.startsWith("enchanted"))
                 name = name.substring(name.indexOf("_") + 1);
 
-            /*
-             *  Skip elements that have no texture at assets/chaosawakens/textures/item
-             *  or already have an existing model at assets/chaosawakens/models/item
-             */
             if (!existingFileHelper.exists(new ResourceLocation(Capable.MODID, "item/" + name), TEXTURE) || existingFileHelper.exists(new ResourceLocation(Capable.MODID, "item/" + name), MODEL))
                 continue;
 
