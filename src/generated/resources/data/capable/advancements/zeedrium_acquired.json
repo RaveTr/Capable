@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "capable:zeedrium_ingot"
+    },
+    "title": {
+      "translate": "advancements.capable.zeedrium_acquired.title"
+    },
+    "description": {
+      "translate": "advancements.capable.zeedrium_acquired.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "capable:textures/gui/advancement_tab_bg.png"
+  },
+  "criteria": {
+    "zeedrium_acquired": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "capable:zeedrium_ingot"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "zeedrium_acquired"
+    ]
+  ]
+}

@@ -1,0 +1,11 @@
+{
+"itemGroup.capable_items_group": "Capable Items Tab",
+
+"advancements.capable.zeedrium_acquired.title": "Zeedrium Acquired!",
+"advancements.capable.zeedrium_acquired.description": "Mine and smelt Zeedrium or find it somewhere",
+
+"tooltip.capable.default": "Hold SHIFT or CTRL for more info",
+"tooltip.capable.zeedrium_ingot": "Obtained from smelting Zeedrium Ore",
+
+"item.capable.zeedrium_ingot": "Zeedrium Ingot"
+}

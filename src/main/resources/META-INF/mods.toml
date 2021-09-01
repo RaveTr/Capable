@@ -32,17 +32,3 @@ mandatory=true
 versionRange="[3.0,)"
 ordering="NONE"
 side="BOTH"
-
-[[dependencies.capable]]
-modId="projecte"
-mandatory=false
-versionRange="[PE1.0,]"
-ordering="AFTER"
-side="BOTH"
-
-[[dependencies.capable]]
-modId="jeresources"
-mandatory=false
-versionRange="[0.12,]"
-ordering="AFTER"
-side="BOTH"
