@@ -1,4 +1,4 @@
-package com.slepmel.capable.data;
+package com.slepmel.capable.common.data;
 
 import java.util.function.BiConsumer;
 

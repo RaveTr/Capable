@@ -23,15 +23,15 @@ import org.apache.logging.log4j.Logger;
 import com.slepmel.capable.api.CapableReflection;
 import com.slepmel.capable.client.ClientStuff;
 import com.slepmel.capable.client.ToolTips;
+import com.slepmel.capable.common.data.CapableAdvancementProvider;
+import com.slepmel.capable.common.data.CapableBlockModelProvider;
+import com.slepmel.capable.common.data.CapableBlockStateProvider;
+import com.slepmel.capable.common.data.CapableItemModelProvider;
+import com.slepmel.capable.common.data.CapableRecipeProvider;
+import com.slepmel.capable.common.data.CapableTagProvider;
 import com.slepmel.capable.common.registry.CapableBlocks;
 import com.slepmel.capable.common.registry.CapableItems;
 import com.slepmel.capable.config.CapableConfig;
-import com.slepmel.capable.data.CapableAdvancementProvider;
-import com.slepmel.capable.data.CapableBlockModelProvider;
-import com.slepmel.capable.data.CapableBlockStateProvider;
-import com.slepmel.capable.data.CapableItemModelProvider;
-import com.slepmel.capable.data.CapableRecipeProvider;
-import com.slepmel.capable.data.CapableTagProvider;
 import com.slepmel.capable.setupandevents.CommonSetup;
 
 // The value here should match an entry in the META-INF/mods.toml file
