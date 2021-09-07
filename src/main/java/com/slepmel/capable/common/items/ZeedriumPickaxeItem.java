@@ -61,8 +61,6 @@ public class ZeedriumPickaxeItem extends PickaxeItem{
 				ItemStack drop = new ItemStack(Items.EMERALD);
 				double chance = Common.zeedriumChancesOfSpecialProperties.get();
 				if (world.random.nextDouble() < chance && Common.enableZeedriumPickaxeProperties.get()) {
-                    int i = world.random.nextInt(1);
-                    for (int x = 0; x <= i; x++)
 					world.addFreshEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), drop));
 				}
 			}
