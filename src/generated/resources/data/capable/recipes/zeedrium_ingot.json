@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ZZZ",
+    "ZZZ",
+    "ZZZ"
+  ],
+  "key": {
+    "Z": {
+      "item": "capable:zeedrium_nugget"
+    }
+  },
+  "result": {
+    "item": "capable:zeedrium_ingot"
+  }
+}

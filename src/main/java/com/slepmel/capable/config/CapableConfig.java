@@ -49,8 +49,8 @@ public class CapableConfig {
 	         zeedriumSwordDamage = builder.define("Zeedrium Sword damage", 20);
 	         zeedriumPickaxeDamage = builder.define("Zeedrium Pickaxe damage", 11);
 	         zeedriumAxeDamage = builder.define("Zeedrium Axe damage", 18);
-	         zeedriumHoeDamage = builder.define("Zeedrium Hoe damage", 5);
-	         zeedriumShovelDamage = builder.define("Zeedrium Shovel damage", 7);
+	         zeedriumHoeDamage = builder.define("Zeedrium Hoe damage", 1);
+	         zeedriumShovelDamage = builder.define("Zeedrium Shovel damage", 3);
 	         builder.pop();
 	         builder.pop();
 	         
@@ -77,7 +77,7 @@ public class CapableConfig {
 	         builder.pop();
 	         
 	         builder.push("Chances for special tool properties to have effect");
-	         builder.comment("0.1 = 10%, first value is the default chance. Second value is the minimum chance. Third value is the maximum chance");
+	         builder.comment("0.1 = 10%, this value is the default chance. Second value (0.0) is the minimum chance. Third value (1.0) is the maximum chance");
 	         zeedriumChancesOfSpecialProperties = builder.defineInRange("Chance for Zeedrium Pickaxe to duplicate ore drops", 0.3, 0, 1);
 	         builder.pop();
 		 }

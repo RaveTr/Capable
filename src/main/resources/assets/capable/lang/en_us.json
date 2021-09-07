@@ -10,10 +10,13 @@
 "tooltip.capable.zeedrium_ingot": "Obtained from smelting Zeedrium Ore",
 "tooltip.capable.zeedrium_ore": "A rare ore, found between y8 and y16",
 
+"item.capable.zeedrium_nugget": "Zeedrium Nugget",
 "item.capable.zeedrium_ingot": "Zeedrium Ingot",
 "item.capable.zeedrium_sword": "Zeedrium Sword",
 "item.capable.zeedrium_pickaxe": "Zeedrium Pickaxe",
 "item.capable.zeedrium_axe": "Zeedrium Axe",
+"item.capable.zeedrium_shovel": "Zeedrium Shovel",
+"item.capable.zeedrium_hoe": "Zeedrium Hoe",
 
 "block.capable.zeedrium_ore": "Zeedrium Ore"
 }

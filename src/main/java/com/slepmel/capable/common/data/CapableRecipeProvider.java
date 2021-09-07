@@ -56,7 +56,10 @@ public class CapableRecipeProvider extends RecipeProvider{
 	    		//Insert recipes here(all types lmao)
 	    	 ShapedRecipeBuilder.shaped(CapableItems.ZEEDRIUM_SWORD.get()).define('Z', CapableItems.ZEEDRIUM_INGOT.get()).define('S', Items.STICK).pattern("Z").pattern("Z").pattern("S").unlockedBy("has_zeedrium_ingot", has(CapableItems.ZEEDRIUM_INGOT.get())).save(recipe);
 	    	 ShapedRecipeBuilder.shaped(CapableItems.ZEEDRIUM_AXE.get()).define('Z', CapableItems.ZEEDRIUM_INGOT.get()).define('S', Items.STICK).pattern("ZZ").pattern("ZS").pattern(" S").unlockedBy("has_zeedrium_ingot", has(CapableItems.ZEEDRIUM_INGOT.get())).save(recipe);
+	    	 ShapedRecipeBuilder.shaped(CapableItems.ZEEDRIUM_SHOVEL.get()).define('Z', CapableItems.ZEEDRIUM_INGOT.get()).define('S', Items.STICK).pattern("Z").pattern("S").pattern("S").unlockedBy("has_zeedrium_ingot", has(CapableItems.ZEEDRIUM_INGOT.get())).save(recipe);
+	    	 ShapedRecipeBuilder.shaped(CapableItems.ZEEDRIUM_HOE.get()).define('Z', CapableItems.ZEEDRIUM_INGOT.get()).define('S', Items.STICK).pattern("ZZ").pattern(" S").pattern(" S").unlockedBy("has_zeedrium_ingot", has(CapableItems.ZEEDRIUM_INGOT.get())).save(recipe);
 	    	 ShapedRecipeBuilder.shaped(CapableItems.ZEEDRIUM_PICKAXE.get()).define('Z', CapableItems.ZEEDRIUM_INGOT.get()).define('S', Items.STICK).pattern("ZZZ").pattern(" S ").pattern(" S ").unlockedBy("has_zeedrium_ingot", has(CapableItems.ZEEDRIUM_INGOT.get())).save(recipe);
+	    	 ShapedRecipeBuilder.shaped(CapableItems.ZEEDRIUM_INGOT.get()).define('Z', CapableItems.ZEEDRIUM_NUGGET.get()).pattern("ZZZ").pattern("ZZZ").pattern("ZZZ").unlockedBy("has_zeedrium_nugget", has(CapableItems.ZEEDRIUM_NUGGET.get())).save(recipe);
 	    	}
 	     
 	     //Insert custom recipe methods here

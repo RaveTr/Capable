@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "Z",
+    "S",
+    "S"
+  ],
+  "key": {
+    "Z": {
+      "item": "capable:zeedrium_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "capable:zeedrium_shovel"
+  }
+}
