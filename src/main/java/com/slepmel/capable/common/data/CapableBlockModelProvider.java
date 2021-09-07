@@ -21,10 +21,10 @@ public class CapableBlockModelProvider extends BlockModelProvider{
 
 	@Override
 	protected void registerModels() {
-		
+		this.cubeAll("zeedrium_ore", capableRL("zeedrium_ore"));
 	}
 
-    private ResourceLocation chaosRL(String texture) {
+    private ResourceLocation capableRL(String texture) {
         return new ResourceLocation(Capable.MODID, BLOCK_FOLDER + "/" + texture);
     }
 

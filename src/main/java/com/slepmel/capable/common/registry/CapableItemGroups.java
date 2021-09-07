@@ -22,5 +22,14 @@ public class CapableItemGroups {
         }
 		
 	};
+	
+	public static ItemGroup capableBlocksGroup = new ItemGroup("capable_blocks_group") {
+		
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(CapableBlocks.ZEEDRIUM_ORE.get());
+        }
+		
+	};
 
 }

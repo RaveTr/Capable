@@ -1,8 +1,7 @@
 package com.slepmel.capable.client;
 
 import com.slepmel.capable.common.registry.CapableTags;
-import com.slepmel.capable.config.CapableConfig.Common;
-
+import com.slepmel.capable.config.CapableConfig;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.item.Item;
 import net.minecraft.util.text.TextFormatting;
@@ -12,7 +11,7 @@ import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 public class ToolTips {
 	
     public static void onToolTipEvent(ItemTooltipEvent event) {
-        if (Common.enableToolTips.get()) {
+        if (CapableConfig.Common.enableToolTips.get()) {
             final Item item = event.getItemStack().getItem();
             if (item.is(CapableTags.CUSTOM_TOOLTIPS)) {
                 if (Screen.hasShiftDown() || Screen.hasControlDown())

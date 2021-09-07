@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "capable:zeedrium_ingot"
+    "capable:zeedrium_ingot",
+    "capable:zeedrium_ore"
   ]
 }

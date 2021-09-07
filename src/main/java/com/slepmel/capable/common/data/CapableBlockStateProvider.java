@@ -1,6 +1,7 @@
 package com.slepmel.capable.common.data;
 
 import com.slepmel.capable.Capable;
+import com.slepmel.capable.common.registry.CapableBlocks;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -19,7 +20,7 @@ public class CapableBlockStateProvider extends BlockStateProvider{
 
 	@Override
 	protected void registerStatesAndModels() {
-		
+		this.cubeAll(CapableBlocks.ZEEDRIUM_ORE.get());
 	}
 
 }

@@ -1,13 +1,19 @@
 {
 "itemGroup.capable_items_group": "Capable Items Tab",
-"itemGroup.capable_weapons_group": "Capable Weapons Tab",
+"itemGroup.capable_weapons_group": "Capable Equipment Tab",
+"itemGroup.capable_blocks_group": "Capable Blocks Tab",
 
 "advancements.capable.zeedrium_acquired.title": "Zeedrium Acquired!",
 "advancements.capable.zeedrium_acquired.description": "Mine and smelt Zeedrium or find it somewhere",
 
 "tooltip.capable.default": "Hold SHIFT or CTRL for more info",
 "tooltip.capable.zeedrium_ingot": "Obtained from smelting Zeedrium Ore",
+"tooltip.capable.zeedrium_ore": "A rare ore, found between y8 and y16",
 
 "item.capable.zeedrium_ingot": "Zeedrium Ingot",
-"item.capable.zeedrium_sword": "Zeedrium Sword"
+"item.capable.zeedrium_sword": "Zeedrium Sword",
+"item.capable.zeedrium_pickaxe": "Zeedrium Pickaxe",
+"item.capable.zeedrium_axe": "Zeedrium Axe",
+
+"block.capable.zeedrium_ore": "Zeedrium Ore"
 }

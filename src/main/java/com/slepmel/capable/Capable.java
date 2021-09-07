@@ -5,6 +5,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -27,11 +28,13 @@ import com.slepmel.capable.common.data.CapableAdvancementProvider;
 import com.slepmel.capable.common.data.CapableBlockModelProvider;
 import com.slepmel.capable.common.data.CapableBlockStateProvider;
 import com.slepmel.capable.common.data.CapableItemModelProvider;
+import com.slepmel.capable.common.data.CapableLootTableProvider;
 import com.slepmel.capable.common.data.CapableRecipeProvider;
 import com.slepmel.capable.common.data.CapableTagProvider;
 import com.slepmel.capable.common.registry.CapableBlocks;
 import com.slepmel.capable.common.registry.CapableItems;
 import com.slepmel.capable.config.CapableConfig;
+import com.slepmel.capable.setupandevents.BiomeLoadingStuff;
 import com.slepmel.capable.setupandevents.CommonSetup;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -66,6 +69,7 @@ public class Capable
         CapableBlocks.BLOCKS.register(eBus);
         CapableBlocks.ITEM_BLOCKS.register(eBus);
         
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BiomeLoadingStuff::onBiomeLoadingEvent);
         MinecraftForge.EVENT_BUS.register(this);
         
        
@@ -88,6 +92,7 @@ public class Capable
 			dataGen.addProvider(new CapableItemModelProvider(dataGen, exists));
 			dataGen.addProvider(new CapableBlockStateProvider(dataGen, MODID, exists));
 			dataGen.addProvider(new CapableRecipeProvider(dataGen));
+			dataGen.addProvider(new CapableLootTableProvider(dataGen));
 		}
     }
     

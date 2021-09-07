@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "capable:zeedrium_ore"
+  },
+  "result": "capable:zeedrium_ingot",
+  "experience": 4.0,
+  "cookingtime": 200
+}

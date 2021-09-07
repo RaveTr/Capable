@@ -4,6 +4,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.slepmel.capable.api.CapableReflection;
 import com.slepmel.capable.api.FeatureWrapper;
 import com.slepmel.capable.networking.PacketHandler;
 
@@ -22,6 +23,7 @@ public class CommonSetup {
     	
         event.enqueueWork(() -> {
         	
+        	CapableReflection.classLoad("com.slepmel.capable.common.registry.CapableFeatures");
             configFeatures.forEach((wrapper) -> Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, wrapper.getIdentifier(), wrapper.getFeatureType()));
         });
     	

@@ -7,8 +7,10 @@ import java.util.function.Consumer;
 
 import com.google.common.collect.Sets;
 import com.slepmel.capable.Capable;
+import com.slepmel.capable.common.registry.CapableBlocks;
 import com.slepmel.capable.common.registry.CapableItems;
 
+import net.minecraft.data.CookingRecipeBuilder;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DirectoryCache;
 import net.minecraft.data.IFinishedRecipe;
@@ -16,6 +18,7 @@ import net.minecraft.data.RecipeProvider;
 import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.CookingRecipeSerializer;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 
 public class CapableRecipeProvider extends RecipeProvider{
@@ -52,12 +55,14 @@ public class CapableRecipeProvider extends RecipeProvider{
 	    	protected void buildShapelessRecipes(Consumer<IFinishedRecipe> recipe) {
 	    		//Insert recipes here(all types lmao)
 	    	 ShapedRecipeBuilder.shaped(CapableItems.ZEEDRIUM_SWORD.get()).define('Z', CapableItems.ZEEDRIUM_INGOT.get()).define('S', Items.STICK).pattern("Z").pattern("Z").pattern("S").unlockedBy("has_zeedrium_ingot", has(CapableItems.ZEEDRIUM_INGOT.get())).save(recipe);
+	    	 ShapedRecipeBuilder.shaped(CapableItems.ZEEDRIUM_AXE.get()).define('Z', CapableItems.ZEEDRIUM_INGOT.get()).define('S', Items.STICK).pattern("ZZ").pattern("ZS").pattern(" S").unlockedBy("has_zeedrium_ingot", has(CapableItems.ZEEDRIUM_INGOT.get())).save(recipe);
+	    	 ShapedRecipeBuilder.shaped(CapableItems.ZEEDRIUM_PICKAXE.get()).define('Z', CapableItems.ZEEDRIUM_INGOT.get()).define('S', Items.STICK).pattern("ZZZ").pattern(" S ").pattern(" S ").unlockedBy("has_zeedrium_ingot", has(CapableItems.ZEEDRIUM_INGOT.get())).save(recipe);
 	    	}
 	     
 	     //Insert custom recipe methods here
 	     
 	     protected static void buildCookingRecipes(Consumer<IFinishedRecipe> consumer, String condition, CookingRecipeSerializer<?> recipe, int exp) {
-	    	 //insert cooking recipes here
+	    	 CookingRecipeBuilder.cooking(Ingredient.of(CapableBlocks.ZEEDRIUM_ORE.get()), CapableItems.ZEEDRIUM_INGOT.get(), 1.35F, exp, recipe).unlockedBy("has_zeedrium_ore", has(CapableBlocks.ZEEDRIUM_ORE.get())).save(consumer, "cooked_zeedrium_ore_from_" + condition);
 	     }
 
 }

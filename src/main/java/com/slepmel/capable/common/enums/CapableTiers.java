@@ -4,12 +4,14 @@ import java.util.function.Supplier;
 
 import com.slepmel.capable.common.registry.CapableItems;
 
+import com.slepmel.capable.config.CapableConfig.Common;
+
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 
 public enum CapableTiers implements IItemTier{
 	
-	TOOL_ZEEDRIUM(4, 2500, 10, 20, 64, () -> Ingredient.of(CapableItems.ZEEDRIUM_INGOT.get()));
+	TOOL_ZEEDRIUM(Common.zeedriumHarvestLevel.get(), Common.zeedriumDurability.get(), Common.zeedriumEfficiency.get(), 10, 64, () -> Ingredient.of(CapableItems.ZEEDRIUM_INGOT.get()));
 
 	
     private final int harvestLevel;
@@ -28,22 +30,27 @@ public enum CapableTiers implements IItemTier{
         this.repairMaterial = repairMaterial;
     }
 
+    @Override
     public float getAttackDamageBonus() {
         return this.attackDamage;
     }
 
+    @Override
     public float getSpeed() {
         return this.efficiency;
     }
-
+    
+    @Override
     public int getEnchantmentValue() {
         return this.enchantability;
     }
 
+    @Override
     public int getLevel() {
         return this.harvestLevel;
     }
 
+    @Override
     public int getUses() {
         return this.maxUses;
     }
