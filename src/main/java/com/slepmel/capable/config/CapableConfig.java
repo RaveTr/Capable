@@ -98,11 +98,11 @@ public class CapableConfig {
 	         maxWitheringEnchantmentLevel = builder.define("Maximum enchantment level for the Wither enchantment", 3);
 	         minWitheringEnchantmentCost = builder.define("Minimum cost for the Withering enchantment in levels", 1);
 	         maxWitheringEnchantmentCost = builder.define("Maximum cost for the Withering enchantment in levels", 40);
+	         builder.pop();
 	         builder.push("Poison");
 	         maxPoisonEnchantmentLevel = builder.define("Maximum enchantment level for the Poison enchantment", 3);
 	         minPoisonEnchantmentCost = builder.define("Minimum cost for the Poison enchantment in levels", 1);
 	         maxPoisonEnchantmentCost = builder.define("Maximum cost for the Poison enchantment in levels", 30);
-	         builder.pop();
 	         builder.pop();
 	         builder.pop();
 		 }
