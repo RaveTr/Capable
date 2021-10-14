@@ -1,4 +1,5 @@
 1aa2aff13522487d0504ae2b644e7f0e70eb436d assets/capable/models/block/zeedrium_ore.json
+7d41aa6329beef00837ce364f1e83baec1110d2a assets/capable/models/item/kemium_ingot.json
 465a6dce9e781e59d7b3eb8c4aab9d4b383a3c83 assets/capable/models/item/zeedrium_axe.json
 1c2182ccb559ff2f221b2abd07570d7f6cba5575 assets/capable/models/item/zeedrium_hoe.json
 3944f607fa94a12915d9164f054c01b22803bd7f assets/capable/models/item/zeedrium_ingot.json
@@ -12,6 +13,7 @@ ec6103668b519e5477955f9e85db0a0d99bfffa0 assets/capable/models/item/zeedrium_pic
 5fe6c90b86ceea193104ad0201da93cbdabd9261 data/capable/recipes/zeedrium_axe.json
 f0931808a8c88b7ab4c465eeedf431c6ceda6d86 data/capable/recipes/zeedrium_hoe.json
 65dc16aa1001f1a17d8e624dba4f1f01ade7437b data/capable/recipes/zeedrium_ingot.json
+f5ba953d48c47e6be9efab4271758016a2e99950 data/capable/recipes/zeedrium_nugget.json
 1ff12973ded570bb9eccf01799ab12c0bfdb7c9b data/capable/recipes/zeedrium_pickaxe.json
 b717a178f67311abc8e05f484ea0b2836291d93c data/capable/recipes/zeedrium_shovel.json
 96ff7054961176e881b38dafe24aaab08767203d data/capable/recipes/zeedrium_sword.json

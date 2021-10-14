@@ -9,6 +9,7 @@
 "tooltip.capable.default": "Hold SHIFT or CTRL for more info",
 "tooltip.capable.zeedrium_ingot": "Obtained from smelting Zeedrium Ore",
 "tooltip.capable.zeedrium_ore": "A rare ore, found between y8 and y16",
+"tooltip.capable.crash_course_pickaxe": "Literal Minecraft shitpost. Obtainable only in creative, and I'll have you take a wild guess as to what this pickaxe does",
 
 "item.capable.zeedrium_nugget": "Zeedrium Nugget",
 "item.capable.zeedrium_ingot": "Zeedrium Ingot",
@@ -17,6 +18,13 @@
 "item.capable.zeedrium_axe": "Zeedrium Axe",
 "item.capable.zeedrium_shovel": "Zeedrium Shovel",
 "item.capable.zeedrium_hoe": "Zeedrium Hoe",
+"item.capable.kemium_ingot": "Kemium Ingot",
+
+"enchantment.capable.withering": "Wither",
+"enchantment.capable.poison": "Poison",
+"enchantment.capable.curse_of_regret": "Curse of Regret",
+
+"item.capable.crash_course_pickaxe": "Crash Course Pickaxe",
 
 "block.capable.zeedrium_ore": "Zeedrium Ore"
 }

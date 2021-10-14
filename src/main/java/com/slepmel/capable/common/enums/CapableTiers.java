@@ -2,6 +2,7 @@ package com.slepmel.capable.common.enums;
 
 import java.util.function.Supplier;
 
+import net.minecraft.item.Items;
 import com.slepmel.capable.common.registry.CapableItems;
 
 import com.slepmel.capable.config.CapableConfig.Common;
@@ -11,7 +12,8 @@ import net.minecraft.item.crafting.Ingredient;
 
 public enum CapableTiers implements IItemTier{
 	
-	TOOL_ZEEDRIUM(Common.zeedriumHarvestLevel.get(), Common.zeedriumDurability.get(), Common.zeedriumEfficiency.get(), 10, 64, () -> Ingredient.of(CapableItems.ZEEDRIUM_INGOT.get()));
+	TOOL_ZEEDRIUM(Common.zeedriumHarvestLevel.get(), Common.zeedriumDurability.get(), Common.zeedriumEfficiency.get(), 10, 64, () -> Ingredient.of(CapableItems.ZEEDRIUM_INGOT.get())),
+	TOOL_CRASH(10, 1 , 1000F, 1F, 6420, () -> Ingredient.of(Items.DEAD_BUSH));
 
 	
     private final int harvestLevel;

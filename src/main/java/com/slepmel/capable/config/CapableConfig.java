@@ -26,10 +26,19 @@ public class CapableConfig {
 		public static ConfigValue<Boolean> enableZeedriumOreGen;
 		public static ConfigValue<Boolean> enableToolTips;
 		public static ConfigValue<Boolean> enableZeedriumPickaxeProperties;
-		public static ConfigValue<Double> zeedriumChancesOfSpecialProperties;
+		public static ConfigValue<Boolean> enableZeedriumSwordProperties;
+		public static ConfigValue<Double> zeedriumPickaxeChancesOfSpecialProperties;
+		public static ConfigValue<Double> zeedriumSwordChancesOfSpecialProperties;
 		public static ConfigValue<Float> zeedriumEfficiency;
 		public static ConfigValue<Integer> zeedriumDurability;
 		public static ConfigValue<Integer> zeedriumHarvestLevel;
+		public static ConfigValue<Integer> maxWitheringEnchantmentLevel;
+		public static ConfigValue<Integer> maxPoisonEnchantmentLevel;
+		public static ConfigValue<Integer> maxPoisonEnchantmentCost;
+		public static ConfigValue<Integer> minPoisonEnchantmentCost;
+		public static ConfigValue<Integer> minWitheringEnchantmentCost;
+		public static ConfigValue<Integer> maxWitheringEnchantmentCost;
+		//public static ConfigValue<Boolean> enableCustomEnchantments;
 		
 		 Common(ForgeConfigSpec.Builder builder) {
 			 builder.push("ToolTips");
@@ -50,7 +59,7 @@ public class CapableConfig {
 	         zeedriumPickaxeDamage = builder.define("Zeedrium Pickaxe damage", 11);
 	         zeedriumAxeDamage = builder.define("Zeedrium Axe damage", 18);
 	         zeedriumHoeDamage = builder.define("Zeedrium Hoe damage", 1);
-	         zeedriumShovelDamage = builder.define("Zeedrium Shovel damage", 3);
+	         zeedriumShovelDamage = builder.define("Zeedrium Shovel damage", 5);
 	         builder.pop();
 	         builder.pop();
 	         
@@ -73,12 +82,28 @@ public class CapableConfig {
 	         builder.pop();
 	         
 	         builder.push("Special Tool Properties");
+	         enableZeedriumSwordProperties = builder.define("Enable/Disable Zeedrium Sword's special properties", true);
 	         enableZeedriumPickaxeProperties = builder.define("Enable/Disable Zeedrium Pickaxe's special properties", true);
 	         builder.pop();
 	         
 	         builder.push("Chances for special tool properties to have effect");
 	         builder.comment("0.1 = 10%, this value is the default chance. Second value (0.0) is the minimum chance. Third value (1.0) is the maximum chance");
-	         zeedriumChancesOfSpecialProperties = builder.defineInRange("Chance for Zeedrium Pickaxe to duplicate ore drops", 0.3, 0, 1);
+	         zeedriumPickaxeChancesOfSpecialProperties = builder.defineInRange("Chance for Zeedrium Pickaxe to duplicate ore drops", 0.3, 0, 1);
+	         zeedriumSwordChancesOfSpecialProperties = builder.defineInRange("Chance for Zeedrium Sword to to add to the drops of a mob", 0.5, 0, 1);
+	         builder.pop();
+	         
+	         builder.push("Enchantments");
+	         //enableCustomEnchantments = builder.define("Enable/Disable custom enchantments added by Capable", true);
+	         builder.push("Wither");
+	         maxWitheringEnchantmentLevel = builder.define("Maximum enchantment level for the Wither enchantment", 3);
+	         minWitheringEnchantmentCost = builder.define("Minimum cost for the Withering enchantment in levels", 1);
+	         maxWitheringEnchantmentCost = builder.define("Maximum cost for the Withering enchantment in levels", 40);
+	         builder.push("Poison");
+	         maxPoisonEnchantmentLevel = builder.define("Maximum enchantment level for the Poison enchantment", 3);
+	         minPoisonEnchantmentCost = builder.define("Minimum cost for the Poison enchantment in levels", 1);
+	         maxPoisonEnchantmentCost = builder.define("Maximum cost for the Poison enchantment in levels", 30);
+	         builder.pop();
+	         builder.pop();
 	         builder.pop();
 		 }
 	}

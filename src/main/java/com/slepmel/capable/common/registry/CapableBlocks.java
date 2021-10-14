@@ -5,7 +5,6 @@ import java.util.function.Supplier;
 
 import com.slepmel.capable.Capable;
 import com.slepmel.capable.common.blocks.CapableOreBlock;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;import net.minecraft.block.SoundType;
 import net.minecraft.item.BlockItem;
@@ -21,10 +20,9 @@ public class CapableBlocks {
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Capable.MODID);
 	public static final DeferredRegister<Item> ITEM_BLOCKS = DeferredRegister.create(ForgeRegistries.ITEMS, Capable.MODID);
 	
-	
+	//Ores
 	public static final RegistryObject<CapableOreBlock> ZEEDRIUM_ORE = registerBlock("zeedrium_ore", () -> new CapableOreBlock(Block.Properties.copy(Blocks.IRON_ORE).harvestLevel(2).sound(SoundType.STONE).strength(10F).requiresCorrectToolForDrops().harvestTool(ToolType.PICKAXE)).withExp().withExpDrop(5, 10), CapableItemGroups.capableBlocksGroup);
 	
-
     public static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier, ItemGroup itemGroup) {
         return registerBlock(name, supplier, itemGroup, true);
     }

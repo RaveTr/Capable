@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "capable:zeedrium_ingot",
-    "capable:zeedrium_ore"
+    "capable:zeedrium_ore",
+    "capable:crash_course_pickaxe"
   ]
 }

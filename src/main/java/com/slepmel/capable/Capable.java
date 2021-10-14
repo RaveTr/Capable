@@ -1,6 +1,7 @@
 package com.slepmel.capable;
 
 import net.minecraft.data.DataGenerator;
+
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -32,8 +33,10 @@ import com.slepmel.capable.common.data.CapableLootTableProvider;
 import com.slepmel.capable.common.data.CapableRecipeProvider;
 import com.slepmel.capable.common.data.CapableTagProvider;
 import com.slepmel.capable.common.registry.CapableBlocks;
+import com.slepmel.capable.common.registry.CapableEnchantments;
 import com.slepmel.capable.common.registry.CapableItems;
 import com.slepmel.capable.config.CapableConfig;
+import com.slepmel.capable.config.CapableConfig.Common;
 import com.slepmel.capable.setupandevents.BiomeLoadingStuff;
 import com.slepmel.capable.setupandevents.CommonSetup;
 
@@ -68,6 +71,9 @@ public class Capable
         CapableItems.ITEMS.register(eBus);
         CapableBlocks.BLOCKS.register(eBus);
         CapableBlocks.ITEM_BLOCKS.register(eBus);
+      //  if(Common.enableCustomEnchantments.get()) {
+        	CapableEnchantments.ENCHANTMENTS.register(eBus);
+      //  }
         
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, BiomeLoadingStuff::onBiomeLoadingEvent);
         MinecraftForge.EVENT_BUS.register(this);

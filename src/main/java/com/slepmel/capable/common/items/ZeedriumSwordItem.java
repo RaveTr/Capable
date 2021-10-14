@@ -1,5 +1,8 @@
 package com.slepmel.capable.common.items;
 
+import com.slepmel.capable.config.CapableConfig.Common;
+
+
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
@@ -16,13 +19,19 @@ public class ZeedriumSwordItem extends SwordItem{
 	@Override
 	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity player) {
 		if(target != null) {
-            target.addEffect(new EffectInstance(Effects.WEAKNESS, (10 + target.getRandom().nextInt(10)) * 20, 1));
+			if(Common.enableZeedriumSwordProperties.get()) {
+	        target.addEffect(new EffectInstance(Effects.WEAKNESS, (10 + target.getRandom().nextInt(10)) * 20, 1));
             target.addEffect(new EffectInstance(Effects.WITHER, (10 + target.getRandom().nextInt(10)) * 20, 1));
             target.isOnFire();
+			}
+
 		}
 		return super.hurtEnemy(stack, target, player);
 	}
 	
+	@Override
+	public boolean isFireResistant() {
+		return true;
+	}
 	
-
 }

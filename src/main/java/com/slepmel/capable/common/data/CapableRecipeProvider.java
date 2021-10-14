@@ -1,24 +1,22 @@
 package com.slepmel.capable.common.data;
 
 import java.io.IOException;
+
 import java.nio.file.Path;
 import java.util.Set;
 import java.util.function.Consumer;
 
 import com.google.common.collect.Sets;
 import com.slepmel.capable.Capable;
-import com.slepmel.capable.common.registry.CapableBlocks;
 import com.slepmel.capable.common.registry.CapableItems;
 
-import net.minecraft.data.CookingRecipeBuilder;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DirectoryCache;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
 import net.minecraft.data.ShapedRecipeBuilder;
+import net.minecraft.data.ShapelessRecipeBuilder;
 import net.minecraft.item.Items;
-import net.minecraft.item.crafting.CookingRecipeSerializer;
-import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 
 public class CapableRecipeProvider extends RecipeProvider{
@@ -60,12 +58,11 @@ public class CapableRecipeProvider extends RecipeProvider{
 	    	 ShapedRecipeBuilder.shaped(CapableItems.ZEEDRIUM_HOE.get()).define('Z', CapableItems.ZEEDRIUM_INGOT.get()).define('S', Items.STICK).pattern("ZZ").pattern(" S").pattern(" S").unlockedBy("has_zeedrium_ingot", has(CapableItems.ZEEDRIUM_INGOT.get())).save(recipe);
 	    	 ShapedRecipeBuilder.shaped(CapableItems.ZEEDRIUM_PICKAXE.get()).define('Z', CapableItems.ZEEDRIUM_INGOT.get()).define('S', Items.STICK).pattern("ZZZ").pattern(" S ").pattern(" S ").unlockedBy("has_zeedrium_ingot", has(CapableItems.ZEEDRIUM_INGOT.get())).save(recipe);
 	    	 ShapedRecipeBuilder.shaped(CapableItems.ZEEDRIUM_INGOT.get()).define('Z', CapableItems.ZEEDRIUM_NUGGET.get()).pattern("ZZZ").pattern("ZZZ").pattern("ZZZ").unlockedBy("has_zeedrium_nugget", has(CapableItems.ZEEDRIUM_NUGGET.get())).save(recipe);
-	    	}
+	    	 ShapelessRecipeBuilder.shapeless(CapableItems.ZEEDRIUM_NUGGET.get(), 9).requires(CapableItems.ZEEDRIUM_INGOT.get()).unlockedBy("has_zeedrium_ingot_for_nuggets", has(CapableItems.ZEEDRIUM_INGOT.get())).save(recipe);
+	    	// CookingRecipeBuilder.smelting(Ingredient.of(CapableBlocks.ZEEDRIUM_ORE.get()), CapableItems.ZEEDRIUM_INGOT.get(), 1.35F, 400).unlockedBy("has_zeedrium_ore", has(CapableBlocks.ZEEDRIUM_ORE.get())).save(recipe);
+	    	// CookingRecipeBuilder.blasting(Ingredient.of(CapableBlocks.ZEEDRIUM_ORE.get()), CapableItems.ZEEDRIUM_INGOT.get(), 1.45F, 200).unlockedBy("has_zeedrium_ore_for_blasting", has(CapableBlocks.ZEEDRIUM_ORE.get())).save(recipe);
+	     }
 	     
 	     //Insert custom recipe methods here
-	     
-	     protected static void buildCookingRecipes(Consumer<IFinishedRecipe> consumer, String condition, CookingRecipeSerializer<?> recipe, int exp) {
-	    	 CookingRecipeBuilder.cooking(Ingredient.of(CapableBlocks.ZEEDRIUM_ORE.get()), CapableItems.ZEEDRIUM_INGOT.get(), 1.35F, exp, recipe).unlockedBy("has_zeedrium_ore", has(CapableBlocks.ZEEDRIUM_ORE.get())).save(consumer, "cooked_zeedrium_ore_from_" + condition);
-	     }
-
+	    
 }

@@ -4,7 +4,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 
 public class FeatureWrapper {
 	
-	//This class is inspired by the Chaos Awakens feature wrapper
+	//This class is based (based.) off of the Chaos Awakens feature wrapper
 	
     private final String identifier;
     private final ConfiguredFeature<?, ?> featureType;

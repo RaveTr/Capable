@@ -4,11 +4,13 @@ import javax.annotation.Nonnull;
 
 
 import com.slepmel.capable.common.blocks.CapableOreBlock;
+import com.slepmel.capable.common.registry.CapableBlocks;
 import com.slepmel.capable.config.CapableConfig.Common;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.OreBlock;
 import net.minecraft.block.RedstoneOreBlock;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -27,21 +29,20 @@ public class ZeedriumPickaxeItem extends PickaxeItem{
 		super(tier, integer, floatValue, properties);
 	}
 	
-	
 	@Override
 	public boolean mineBlock(@Nonnull ItemStack stack, @Nonnull World world, @Nonnull BlockState state, @Nonnull BlockPos pos, @Nonnull LivingEntity entity) {
 		if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SILK_TOUCH, stack) < 1) {
 			Block block = state.getBlock();
 			if (block instanceof CapableOreBlock) {
 				ItemStack drop = new ItemStack(block);
-				double chance = Common.zeedriumChancesOfSpecialProperties.get();
+				double chance = Common.zeedriumPickaxeChancesOfSpecialProperties.get();
 				if (world.random.nextDouble() < chance && Common.enableZeedriumPickaxeProperties.get()) {
 					world.addFreshEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), drop));
 				}
 			}
 			else if (block instanceof RedstoneOreBlock) {
 				ItemStack drop = new ItemStack(Items.REDSTONE);
-				double chance = Common.zeedriumChancesOfSpecialProperties.get();
+				double chance = Common.zeedriumPickaxeChancesOfSpecialProperties.get();
 				if (world.random.nextDouble() < chance && Common.enableZeedriumPickaxeProperties.get()) {
                     int i = world.random.nextInt(10);
                     for (int x = 0; x <= i; x++)
@@ -50,7 +51,7 @@ public class ZeedriumPickaxeItem extends PickaxeItem{
 			}
 			else if (block == Blocks.LAPIS_ORE) {
 				ItemStack drop = new ItemStack(Items.LAPIS_LAZULI);
-				double chance = Common.zeedriumChancesOfSpecialProperties.get();
+				double chance = Common.zeedriumPickaxeChancesOfSpecialProperties.get();
 				if (world.random.nextDouble() < chance && Common.enableZeedriumPickaxeProperties.get()) {
                     int i = world.random.nextInt(10);
                     for (int x = 0; x <= i; x++)
@@ -59,14 +60,14 @@ public class ZeedriumPickaxeItem extends PickaxeItem{
 			}
 			else if (block == Blocks.EMERALD_ORE) {
 				ItemStack drop = new ItemStack(Items.EMERALD);
-				double chance = Common.zeedriumChancesOfSpecialProperties.get();
+				double chance = Common.zeedriumPickaxeChancesOfSpecialProperties.get();
 				if (world.random.nextDouble() < chance && Common.enableZeedriumPickaxeProperties.get()) {
 					world.addFreshEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), drop));
 				}
 			}
 			else if (block == Blocks.COAL_ORE) {
 				ItemStack drop = new ItemStack(Items.COAL);
-				double chance = Common.zeedriumChancesOfSpecialProperties.get();
+				double chance = Common.zeedriumPickaxeChancesOfSpecialProperties.get();
 				if (world.random.nextDouble() < chance && Common.enableZeedriumPickaxeProperties.get()) {
                     int i = world.random.nextInt(6);
                     for (int x = 0; x <= i; x++)
@@ -75,7 +76,7 @@ public class ZeedriumPickaxeItem extends PickaxeItem{
 			}
 			else if (block == Blocks.DIAMOND_ORE) {
 				ItemStack drop = new ItemStack(Items.DIAMOND);
-				double chance = Common.zeedriumChancesOfSpecialProperties.get();
+				double chance = Common.zeedriumPickaxeChancesOfSpecialProperties.get();
 				if (world.random.nextDouble() < chance && Common.enableZeedriumPickaxeProperties.get()) {
                     int i = world.random.nextInt(2);
                     for (int x = 0; x <= i; x++)
@@ -84,7 +85,7 @@ public class ZeedriumPickaxeItem extends PickaxeItem{
 			}
 			else if (block == Blocks.NETHER_QUARTZ_ORE) {
 				ItemStack drop = new ItemStack(Items.QUARTZ);
-				double chance = Common.zeedriumChancesOfSpecialProperties.get();
+				double chance = Common.zeedriumPickaxeChancesOfSpecialProperties.get();
 				if (world.random.nextDouble() < chance && Common.enableZeedriumPickaxeProperties.get()) {
                     int i = world.random.nextInt(4);
                     for (int x = 0; x <= i; x++)
@@ -93,7 +94,7 @@ public class ZeedriumPickaxeItem extends PickaxeItem{
 			}
 			else if (block == Blocks.NETHER_GOLD_ORE) {
 				ItemStack drop = new ItemStack(Items.GOLD_NUGGET);
-				double chance = Common.zeedriumChancesOfSpecialProperties.get();
+				double chance = Common.zeedriumPickaxeChancesOfSpecialProperties.get();
 				if (world.random.nextDouble() < chance && Common.enableZeedriumPickaxeProperties.get()) {
                     int i = world.random.nextInt(20);
                     for (int x = 0; x <= i; x++)
@@ -101,20 +102,45 @@ public class ZeedriumPickaxeItem extends PickaxeItem{
 				}
 			}
 			else if (block == Blocks.GOLD_ORE) {
-				ItemStack drop = new ItemStack(block);
-				double chance = Common.zeedriumChancesOfSpecialProperties.get();
+				ItemStack drop = new ItemStack(Items.GOLD_INGOT);
+				double chance = Common.zeedriumPickaxeChancesOfSpecialProperties.get();
 				if (world.random.nextDouble() < chance && Common.enableZeedriumPickaxeProperties.get()) {
+                    int i = world.random.nextInt(5);
+                    for (int x = 0; x <= i; x++)
 					world.addFreshEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), drop));
 				}
 			}
 			else if (block == Blocks.IRON_ORE) {
-				ItemStack drop = new ItemStack(block);
-				double chance = Common.zeedriumChancesOfSpecialProperties.get();
+				ItemStack drop = new ItemStack(Items.IRON_INGOT);
+				double chance = Common.zeedriumPickaxeChancesOfSpecialProperties.get();
 				if (world.random.nextDouble() < chance && Common.enableZeedriumPickaxeProperties.get()) {
+                    int i = world.random.nextInt(8);
+                    for (int x = 0; x <= i; x++)
 					world.addFreshEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), drop));
 				}
 			}
+		    else if (block == Blocks.ANCIENT_DEBRIS) {
+				ItemStack drop = new ItemStack(Items.NETHERITE_SCRAP);
+				double chance = Common.zeedriumPickaxeChancesOfSpecialProperties.get();
+				if (world.random.nextDouble() < chance && Common.enableZeedriumPickaxeProperties.get()) {
+                    int i = world.random.nextInt(2);
+                    for (int x = 0; x <= i; x++)
+					world.addFreshEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), drop));
+				}
+		    }
+		    else if (block instanceof OreBlock && block != Blocks.ANCIENT_DEBRIS && block != Blocks.LAPIS_ORE && block != Blocks.EMERALD_ORE && block != Blocks.DIAMOND_ORE && block != Blocks.REDSTONE_ORE && block != Blocks.IRON_ORE && block != Blocks.GOLD_ORE && block != Blocks.NETHER_QUARTZ_ORE && block != Blocks.NETHER_GOLD_ORE && block != Blocks.COAL_ORE && block != CapableBlocks.ZEEDRIUM_ORE.get()) {
+		    	ItemStack drop = new ItemStack(block);
+		    	double chance = Common.zeedriumPickaxeChancesOfSpecialProperties.get();
+		    	if (world.random.nextDouble() < chance && Common.enableZeedriumPickaxeProperties.get()) {
+		    		world.addFreshEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), drop));
+		    	}
+		    }
 		}
 		return super.mineBlock(stack, world, state, pos, entity);
+	}
+	
+	@Override
+	public boolean isFireResistant() {
+		return true;
 	}
 }
